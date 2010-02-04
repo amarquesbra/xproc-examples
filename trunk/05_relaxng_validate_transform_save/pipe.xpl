@@ -2,7 +2,7 @@
 	<!--
 		Simple XProc example - transforming a source XML file into XHTML using
 		an external stylesheet. This time a validation step takes place to
-		verify the source document/instance against an XML Schema.
+		verify the source document/instance against a RelaxNG Schema.
 	-->
 <p:declare-step xmlns:p="http://www.w3.org/ns/xproc">
 

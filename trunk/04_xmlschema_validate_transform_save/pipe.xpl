@@ -38,9 +38,3 @@
 	<p:store href="output.html" method="xml" />
 
 </p:declare-step>
-
-	<!-- TODO - look into RelaxNG validation too -->
-	<!--
-		<p:validate-with-relax-ng> <p:input port="schema"> <p:document
-		href="../schema/dbspec.rng" /> </p:input> </p:validate-with-relax-ng>
-	-->
