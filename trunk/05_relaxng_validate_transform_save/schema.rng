@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rng:grammar xmlns:rng="http://relaxng.org/ns/structure/1.0" ns="" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+    <rng:start combine="choice">
+        <rng:ref name="TicketDocument"/>
+    </rng:start>
+    <rng:define name="TicketDocument">
+        <rng:element name="TicketDocument">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+                XML Schema for a TiX Bug ticket
+            </a:documentation>
+            
+            
+            
+            <rng:element name="Ticket">
+                
+                
+                <rng:optional>
+                    <rng:element name="id">
+                        <rng:data type="string"/>
+                    </rng:element>
+                </rng:optional>
+                
+                <rng:element name="type">
+                    
+                    <rng:choice>
+                        <rng:value>bug</rng:value>
+                        <rng:value>task</rng:value>
+                        <rng:value>new-feature</rng:value>
+                        <rng:value>improvement</rng:value>
+                    </rng:choice>
+                    
+                </rng:element>
+                
+                <rng:element name="summary">
+                    <rng:data type="string"/>
+                </rng:element>
+                <rng:element name="description">
+                    <rng:data type="string"/>
+                </rng:element>
+                <rng:element name="assigneeId">
+                    <rng:data type="string"/>
+                </rng:element>
+                <rng:element name="reporterId">
+                    <rng:data type="string"/>
+                </rng:element>
+                
+                <rng:optional>
+                    <rng:element name="ticketPriority">
+                        
+                        <rng:choice>
+                            <rng:value>critical</rng:value>
+                            <rng:value>high</rng:value>
+                            <rng:value>medium</rng:value>
+                            <rng:value>low</rng:value>
+                        </rng:choice>
+                        
+                    </rng:element>
+                </rng:optional>
+                
+                <rng:element name="ticketStatus">
+                    
+                    <rng:choice>
+                        <rng:value>open</rng:value>
+                        <rng:value>reopened</rng:value>
+                        <rng:value>closed</rng:value>
+                        <rng:value>fixed</rng:value>
+                        <rng:value>will-not-fix</rng:value>
+                    </rng:choice>
+                    
+                </rng:element>
+                
+                <rng:element name="createdDate">
+                    <rng:data type="dateTime"/>
+                </rng:element>
+                <rng:element name="dueDate">
+                    <rng:data type="dateTime"/>
+                </rng:element>
+                
+                
+                
+            </rng:element>
+            
+            <rng:zeroOrMore>
+                <rng:element name="WorkflowEvents">
+                    <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+                        A collection of workflow events. 
+                    </a:documentation>
+                    
+                    
+                    
+                    <rng:oneOrMore>
+                        <rng:element name="WorkflowEvent">
+                            
+                            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+                                A single workflow event
+                            </a:documentation>
+                            
+                            <rng:element name="updatedDate">
+                                <rng:data type="dateTime"/>
+                            </rng:element>
+                            <rng:element name="workflowCommentText">
+                                <rng:data type="string"/>
+                            </rng:element>
+                            <rng:element name="workflowUserId">
+                                <rng:data type="string"/>
+                            </rng:element>
+                            
+                            
+                        </rng:element>
+                    </rng:oneOrMore>
+                    
+                    
+                    
+                </rng:element>
+            </rng:zeroOrMore>
+            
+            
+        </rng:element>
+    </rng:define>
+</rng:grammar>
