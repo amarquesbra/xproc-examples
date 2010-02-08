@@ -14,4 +14,4 @@
 			<p:document href="stylesheet.xsl"/>
 		</p:input>
 	</p:xslt>
-</p:pipeline>  
+</p:pipeline>
